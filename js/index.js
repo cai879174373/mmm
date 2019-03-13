@@ -36,7 +36,7 @@
                 $('#main #menu').html(html);
                 $('.menu-item:nth-child(n+9)').hide();
                 $('#main .btn-more').on('click',function(){
-                    $('.menu-item:nth-child(n+9)').fadeToggle();
+                    $('.menu-item:nth-child(n+9)').fadeToggle(400);
                 } )
 
                 
