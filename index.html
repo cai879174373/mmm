@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>慢慢买首页</title>
+    <!-- 引入swiper的css样式 -->
+    <link rel="stylesheet" href="swiper/css/swiper.css">
+    <!-- 引入自己写的css样式 -->
+    <link rel="stylesheet" href="less/index.css">
+    <!-- 生成模板 -->
+
+    <script id="menuTpl" type="text/template">
+        {{each result value i}}
+        <div class="menu-item">
+            <a href="{{i==7?'javascript:;':value.titlehref}}" class='btn-more'>
+                {{#value.img}}
+                <p>{{value.name}}</p>
+            </a>
+        </div>
+        {{/each}}
+    </script>
+</head>
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+        <div class="title">
+            <a href="index.html" class="logo"><img src="images/header_logo.png" alt=""></a>
+            <a href="#" class="appload"> <img src="images/header_app.png" alt=""></a>
+        </div>
+        <div class="search">
+            <form action="">
+                <input type="search" class="input-search" placeholder="请输入要搜索的商品">
+                <input type="button" class="input-button" value="搜索">
+            </form>
+        </div>
+    </header>
+
+    <!-- 主体区域 -->
+    <main id="main">
+        <!-- 轮播图区域 -->
+        <section id="slide">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="images/banner01.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="images/banner02.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="images/banner03.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="images/banner04.jpg" alt=""></div>
+                  <div class="swiper-slide"><img src="images/banner05.jpg" alt=""></div>
+                  
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+                <!-- <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div> -->
+              </div>
+        </section>
+        <!-- 菜单栏区域 -->
+        <section id="menu">
+            <!-- <div class="menu-item">
+                <a href="#">
+                    <img src="images/ic_cu.png" alt="">
+                    <p>省钱控</p>
+                </a>
+            </div> -->
+          
+        </section>
+
+        <!-- 标题区域 -->
+        <div class="list-title">
+            <span>超值折扣</span>
+            <img src="images/more.png" alt="">
+        </div>
+        <!-- 列表区域 -->
+        <section id="list">
+            
+            <div class="list-content">
+                <ul>
+                    <!-- <li class="bb">
+                        <a href="" herf="#">
+                            <img src="images/55d2cf3eNc2d117d0.jpg" alt="">
+                            <div class="title">
+                                <p> 移动端凑单品：海天 鲜味 生抽1.28L <span>10.9元</span> </p>
+                                <div class="content">京东商城 | 10-25 14:10</div>
+                            </div>
+                        </a>
+                    </li> -->
+                   
+                </ul>
+            </div>
+
+          
+        </section>
+        <div class="more"><a href="">更多优惠信息 »</a></div>
+         <!-- 标题区域 -->
+     <div class="list-title">
+        <span>品牌排行</span>
+        <img src="images/more.png" alt="">
+    </div>
+    </main>
+
+    <script id="listTpl" type="text/html">
+{{each result value i}}
+        <li class="bb">
+            <a href="#" >
+                {{#value.productImgSm}}
+                <div class="title">
+                    <p> {{value.productName}} <span>{{value.productPinkage}}</span> </p>
+                    <div class="content"><span>{{value.productFrom}} | {{value.productTime}}</span> <i>{{value.productComCount.replace(/[^0-9]/ig,"")}}</i></div>
+                </div>
+            </a>
+        </li>
+    {{/each}}
+    </script>
+
+    
+    <!-- 引入jquery的js文件 -->
+
+    <script src="lib/jquery/jquery.min.js"></script>
+    <!-- 引入模板js样式 -->
+    <script src="js/template-web.js"></script>
+    <!-- 引入swiper的js样式 -->
+    <script src="swiper/js/swiper.js"></script>
+
+    <!-- 引入自己写的js样式 -->
+    <script src="js/index.js"></script>
+</body>
+</html>
