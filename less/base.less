@@ -70,8 +70,14 @@ i {
 }
 
  /* 环形菜单 */
- a{
-	background-size: 30px 30px;
+ .circle{
+     .ring{
+        a{
+            background-size: 30px 30px;
+     }
+     }
+    
+ 
 }
 .ring>a:nth-child(1){background-image: url("../images/ic_search.png");}
 .ring>a:nth-child(2){background-image: url("../images/ic_cu.png");}
@@ -155,4 +161,75 @@ i {
 }
 .hide{
 	display: none;
+}
+
+// 头部区域
+#header {
+    height: .5rem;
+    line-height: .5rem;
+
+    .title {
+        background-color: #ff4e49;
+        height: .5rem;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 999;
+        display: flex;
+        justify-content: space-between;
+        line-height: .5rem;
+
+        .logo {
+            padding: 0 .1rem;
+
+            img {
+                max-height: .25rem;
+            }
+
+        }
+
+        .appload {
+            padding: 0 .1rem;
+
+            img {
+                max-height: .34rem;
+            }
+        }
+    }
+
+    .search {
+
+        form {
+            background-color: #fff;
+            display: flex;
+            // justify-content: space-between;
+            padding: .1rem;
+            position: fixed;
+            top: .5rem;
+            width: 100%;
+            z-index: 999;
+
+            .input-search {
+                flex: 1;
+                background: #f1f1f1;
+                font-size: .13rem;
+                margin-right: .1rem;
+                padding-left: .2rem;
+                height: .3rem;
+                line-height: .3rem;
+                border-radius: .15rem;
+            }
+
+            .input-button {
+                font-size: .16rem;
+                width: .63rem;
+                height: .3rem;
+                line-height: .2rem;
+                border-radius: .15rem;
+                background-color: #565656;
+                color: #fff;
+            }
+        }
+    }
+
 }

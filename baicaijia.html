@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>白菜价-淘宝内部券</title>
+    <!-- <link rel="stylesheet" href="less/iconfont.css"> -->
+
+    <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css" />
+
+    <!-- <link rel="stylesheet" href="lib/mui/css/mui.css"> -->
+
+    <!-- 引入bootstrap的css -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" />
+    <!-- 引入swiper的css样式 -->
+    <link rel="stylesheet" href="swiper/css/swiper.css" />
+    <!-- 引入自己写的css样式 -->
+    <link rel="stylesheet" href="less/baicaijia.css" />
+  </head>
+
+  <body>
+    <!-- 头部区域 -->
+    <header id="header">
+      <div class="title">
+        <a href="index.html" class="logo  fa fa-chevron-left"></a>
+        <h2>白菜价-淘宝内部券</h2>
+        <a href="#" class="appload">
+          <img src="images/header_app.png" alt=""
+        /></a>
+      </div>
+      <div class="search">
+        <form action="">
+          <input
+            type="search"
+            class="input-search"
+            placeholder="请输入要搜索的商品"
+          />
+          <input type="button" class="input-button" value="搜索" />
+        </form>
+      </div>
+    </header>
+
+    <!-- 主体区域 -->
+    <main id="main">
+      <div class="title-product">
+        <ul class="nav nav-tabs nav-product" role="tablist">
+          <!-- <li role="presentation" class="active"><a href="#home" data-toggle="tab">全部</a></li>
+                <li role="presentation"><a href="#profile" data-toggle="tab">热销</a></li>
+                <li role="presentation"><a href="#messages" data-toggle="tab">9块邮</a></li>
+                <li role="presentation"><a href="#settings" data-toggle="tab">19块邮</a></li>
+                <li role="presentation"><a href="#settings" data-toggle="tab">数码家电</a></li> -->
+        </ul>
+      </div>
+      <!-- Nav tabs -->
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">
+          <!-- 列表区域 -->
+          <section id="list">
+            <div class="list-content">
+              <ul>
+                <!-- <li class="bb">
+                                <div class="mainList" href="#">
+                                    <img src="images/j_sources_img_2016_10_22_190_190_0_575ab3bffff305c81740cbd6ce7aceb4.jpg">
+                                    <div class="title">
+                                        <div class="top">
+                                <p><span class="b">[包邮]</span>车内车载空气净化器除异味甲醛烟味   </p>
+                                <p> <i>券后</i><em>¥</em>10.0<del>¥25</del>  </p>
+                        </div>
+
+                                        <div class="progress-count">
+                                                <div class="progress">
+                                                        <div class="progress-bar progress-bar-danger" role="progressbar"
+                                                            aria-valuemax="100" style="width: 1%">
+                                                            
+                                                        </div>
+                                                        <span class="Percentage">1%</span>
+                                                    </div>
+                                            <span class="progressNum">已领82件</span>
+                                        </div>
+                                       
+                                        <div class="content"><a href="">点此领取15元劵</a> <button type="button" class="btn btn-danger">下单链接</button></div>
+                                    </div>
+                                </div>
+                            </li> -->
+              </ul>
+            </div>
+          </section>
+        </div>
+        <!-- <div role="tabpanel" class="tab-pane" id="profile">...</div>
+        <div role="tabpanel" class="tab-pane" id="messages">...</div>
+        <div role="tabpanel" class="tab-pane" id="settings">...</div> -->
+      </div>
+    </main>
+    <div class="mask hide"></div>
+    <div class="circle">
+      <div class="ring">
+        <a href="category.html" class="menuItem"></a>
+        <a href="moneyctrl.html" class="menuItem"></a>
+        <a href="inlanddiscount.html" class="menuItem"></a>
+        <a href="baicaijia.html" class="menuItem"></a>
+        <a href="moneyctrl.html" class="menuItem"></a>
+        <a href="coupon.html" class="menuItem"></a>
+        <a href="gsproduct.html" class="menuItem"></a>
+        <a href="index.html" class="menuItem"></a>
+      </div>
+      <a href="##" class="center"></a>
+    </div>
+
+    <!-- 生成标题模板 -->
+
+    <script id="baicaijiatitleTpl" type="text/html">
+      {{each result value i}}
+      <li role="presentation" data-id="{{value.titleId}}" class="{{i==0?'active':''}}"><a href="#nav{{value.titleId}}"  data-toggle="tab">{{value.title}}</a></li>
+      {{/each}}
+    </script>
+
+    <!-- <script type="text/template" id="bcjcountTpl">
+
+      {{each result value}}
+       <div role="tabpanel" class="tab-pane clearfix" id="nav{{value.titleId}}">
+
+       </div>
+       {{/each}}
+    </script> -->
+
+    <!-- 生成模板 -->
+    <script id="baicaijiaTpl" type="text/html">
+        {{each result value}}
+          <li class="bb">
+                  <div class="mainList" href="#">
+                      <!-- <img src="images/j_sources_img_2016_10_22_190_190_0_575ab3bffff305c81740cbd6ce7aceb4.jpg"> -->
+                     {{#value.productImg}}
+                      <div class="title">
+                          <div class="top">
+                                  <p >{{#value.productName}}  </p>
+                                  <p class="p-bottom"> {{#value.productPrice}}  </p>
+                          </div>
+
+
+
+                          <div class="progress-count">
+                                  <div class="progress">
+                                          <div class="progress-bar progress-bar-danger" role="progressbar"
+                                              aria-valuemax="100" style="width: 1%">
+
+                                          </div>
+                                          <span class="Percentage">1%</span>
+                                      </div>
+                              <span class="progressNum">已领82件</span>
+                          </div>
+
+                          <div class="content"><a href="">点此领取15元劵</a> <button type="button" class="btn btn-danger">下单链接</button></div>
+                      </div>
+                  </div>
+              </li>
+      {{/each}}
+    </script>
+
+    <!-- 引入jquery的js文件 -->
+
+    <script src="lib/jquery/jquery.min.js"></script>
+
+    <!-- 引入mui的js文件 -->
+    <!-- <script src="lib/mui/js/mui.js"></script> -->
+    <!-- 引入模板js样式 -->
+    <script src="js/template-web.js"></script>
+    <!-- 引入swiper的js样式 -->
+    <script src="swiper/js/swiper.js"></script>
+
+    <!-- 引入bootstrap的js -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+
+    <script src="js/base.js"></script>
+
+    <!-- 引入自己写的js样式 -->
+    <script src="js/baicaijia.js"></script>
+  </body>
+</html>
